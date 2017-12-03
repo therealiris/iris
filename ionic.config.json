@@ -1,6 +1,8 @@
 {
   "name": "Iris",
   "app_id": "67dccf8b",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "ionic-angular"
 }
