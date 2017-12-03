@@ -1,6 +1,6 @@
 {
   "name": "Iris",
   "app_id": "67dccf8b",
-  "v2": true,
-  "typescript": true
+  "integrations": {},
+  "type": "ionic-angular"
 }
