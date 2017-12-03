@@ -1,0 +1,42 @@
+<ion-content padding style="text-align: center">
+  <ion-title>Welcome to IRIS</ion-title>
+  <ion-slides pager (ionSlideDidChange)="slideChanged()">
+  <ion-slide class="welcome-slides" style="background-color: white">
+    <ion-card>
+        <ion-card-content>
+          <img src="assets/img/splash/splash1.svg" alt="">
+        </ion-card-content>
+      </ion-card>
+      <p class="welcome-desc">
+            <strong>Network and Connect with Professionals from the Technology and IT Industry</strong>
+          </p>
+  </ion-slide>
+
+  <ion-slide class="welcome-slides" style="background-color: white">
+    <ion-card>
+        <ion-card-content>
+          <img src="assets/img/splash/splash2.svg" alt="">
+        </ion-card-content>
+      </ion-card>
+          <p class="welcome-desc">
+            <strong>Rate users based on their Skillsets and Expertise</strong>
+          </p>
+  </ion-slide>
+
+  <ion-slide class="welcome-slides" style="background-color: white">
+    <ion-card>
+        <ion-card-content>
+          <img src="assets/img/splash/splash3.svg" alt="">
+        </ion-card-content>
+      </ion-card>
+      <p class="welcome-desc">
+            <strong>Collect Karma Points to earn a Top Rank to showcase your expertise to the world</strong>
+          </p>
+  </ion-slide>
+
+</ion-slides>
+<button *ngIf="showLogin" ion-button icon-left round class="linked-in" (click)="login()">
+  <!-- <ion-icon name="logo-linkedin"></ion-icon> -->
+  <b>Get Started</b>
+</button>
+</ion-content>

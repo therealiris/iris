@@ -1,0 +1,30 @@
+page-list {
+	ion-slider{
+		text-align:center;
+		width: 60vw;
+	},
+	.iris-slide{
+		background:transparent;
+		height:50vh;
+	}
+	.iris-slide.swiper-slide{
+		width:90vw !important;
+		margin:5vw;
+		padding: 0 2vw
+	}
+
+
+}
+.onboard-pic{
+	display:inline;
+	border:none;
+	border-radius:50%;
+	height:20vh;
+}
+.discover-thumb{
+	text-align:center
+}
+.discover-title{
+	font-weight:300;
+	font-size : 18px;
+}

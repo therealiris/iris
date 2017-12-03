@@ -1,0 +1,32 @@
+on-three{
+	.item-md{
+        font-size:0.8em;
+    }
+    .content{
+        background:#fff;
+    }
+    .toolbar-title{
+        color:#5e8af2;
+        font-weight:400;
+    }
+    .searchbar .searchbar-input{
+        color:#676767;
+        font-size:1em;
+    }   
+}
+.item-select{
+	padding-top:1em;
+}
+.hobby{
+	border-style: solid;
+    border-radius: 2em;
+    padding: 10px;
+    margin: 4px;
+    border-width: thin;
+    border-color: cornflowerblue;
+    color: cornflowerblue;
+}
+.item-remove{
+	vertical-align:bottom;
+	color:#488aff;
+}

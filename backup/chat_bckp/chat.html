@@ -1,0 +1,26 @@
+
+<ion-content>
+  <div class="chat">
+  <div class="chat-title">
+    <ion-header no-border>
+    <ion-navbar>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <figure class="avatar">
+      <img src={{chatItem.connect.pictureUrl}} /></figure>
+      <ion-title>{{chatItem.connect.fullName}}</ion-title>
+    </ion-navbar>
+  </ion-header>
+    
+  </div>
+  <div class="messages">
+    <div class="messages-content"></div>
+  </div>
+  <div class="message-box">
+    <textarea type="text" class="message-input" placeholder="Type message..."></textarea>
+    <button class="message-submit">Send</button>
+  </div>
+
+  </div>
+</ion-content>

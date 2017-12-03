@@ -1,0 +1,34 @@
+<ion-header no-border>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Ranking</ion-title>
+    <ion-buttons end >
+      <button ion-button (click)="back()"> BACK</button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="discover-thumb fixed-content">
+    <img src="{{user.pictureUrl}}"  class="discover-pic">
+    <div style="padding-top: 1em" >
+      <span style="color: #fff;font-size: 1.4em;padding: 0 1em;">You rank <strong>{{info.ranking}}</strong></span>
+      <span style="color: #fff;font-size: 1.4em;padding: 0 1em;">Total Points : {{info.score}}</span>
+    </div>
+  </div>
+  <ion-list style="margin-top: 30vh; padding: 1em;text-align: center;color: #999999">
+    <ion-item *ngFor="let user of rankList; let i=index;" style="border-bottom-style: solid;border-bottom-width: thin; border-bottom-color: #999999">
+    <div style="text-align: center">
+      <div style="text-align: center">
+        <img src="{{user.pictureUrl}}" class="discover-pic" style="width: 14vw">
+      </div>
+      <h1>{{user.fullName}}</h1>
+      <h2>POINTS : <strong>{{user.score}}</strong></h2>
+      <h2>RANK : <strong>{{user.ranking}}</strong></h2>
+      <rating [(ngModel)]='rates[i]' readOnly="true"></rating>
+    </div>  
+    </ion-item>
+  </ion-list>
+</ion-content>

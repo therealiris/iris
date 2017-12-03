@@ -1,0 +1,53 @@
+<ion-header no-border>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Discover</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="requestSpace">
+  <ion-card class="requestCard">
+    <ion-card-content class="request-card">
+      <div class="discover-thumb">
+        <img src="{{item.pictureUrl}}" class="request-pic">
+      </div>
+      <ion-card-title class="discover-title">
+        {{item.fullName}}
+        </ion-card-title>
+      <p class="headline">
+        {{item.designation}} at {{item.currentWorkplace}}
+      </p>
+      <!-- <rating [(ngModel)]='rate[i]' readOnly="false"></rating> -->
+      <div style="width:80%;margin-left: 10%;padding-bottom: 1em">
+        <div *ngFor="let skillItem of item.skills" style="border-radius: 30px;display: inline-block;color: #656565;padding: 2px 7px;margin:2px; font-size:12px;background: #dadada;">{{skillItem.skill}}</div>
+      </div>
+    </ion-card-content>
+  </ion-card>
+  <div class="question-section">
+    <span class="request-question">
+      Why would you like to get in touch?
+    </span>
+  </div>
+  <ion-item>
+    <ion-label>Select Reason</ion-label>
+    <ion-select [(ngModel)]="reasons" (ngModelChange)='enableConnect()'>
+      <ion-option>Collaboration</ion-option>
+      <ion-option>Ideation and Planning</ion-option>
+      <ion-option>Professional Query</ion-option>
+      <ion-option>Personal Guidance</ion-option>
+      <ion-option>Recruiting</ion-option>
+      <ion-option>other</ion-option>
+      
+    </ion-select>
+  </ion-item>
+  <ion-item *ngIf="allow">
+      <ion-label stacked>Your message here..</ion-label>
+      <ion-input type="text" [(ngModel)]="reasonMessage" ></ion-input>
+    </ion-item>
+  <div class="request-btn">
+    <button ion-button round (click)="cancel()" class="requestBtn">Cancel</button>
+    <button ion-button round [disabled]=!allow (click)="connect()" class="requestBtn">Connect</button>
+  </div>
+</ion-content>

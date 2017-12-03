@@ -1,0 +1,59 @@
+<ion-header no-border >
+  <ion-navbar color="primary">
+    <ion-title>Filter Users</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="passFilter()">
+        <span>Apply</span><ion-icon name="checkmark"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons end>
+      <button ion-button (click)="back()">
+        <span>BACK</span>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <div class="typeBox" style="padding-top: 1em">
+      <ion-item class="filter-check-box">
+        <ion-label class="filter-check-box-label">Professional</ion-label>
+        <ion-checkbox [(ngModel)]="pr" class="checktick" (click)="checkType()"></ion-checkbox>
+      </ion-item>
+      <ion-item class="filter-check-box">
+        <ion-label class="filter-check-box-label">Entrepreneur</ion-label>
+        <ion-checkbox [(ngModel)]="ent" class="checktick" (click)="checkType()"></ion-checkbox>
+      </ion-item>
+    </div>
+    <ion-item>
+      <div style="padding-top: 1em; padding-bottom: 1em">
+        <span style="padding: 0 1em 0 0;color: #999999;">Select Industry</span>
+        <span style="border-radius: 20px;background: #488aff;padding: 4px 7px;color: #fff;font-size: 12px;" (click)="selectIndustry()">Add +</span>
+      </div>
+    </ion-item>
+    <ion-item>
+       <div style="padding:1em 0">
+        <div *ngFor="let ind of industry;let i=index" class="industry" style="max-width:100% !important;padding:0 2em 0 0; display: flex">
+          <div class="industryName" style="width:50vw; color: #999999; font-weight: 400; font-size: 0.7em">{{ind}}</div> 
+          <ion-icon class="item-remove" name="close" (click)="removeIndustry(i)" style="margin-left: 15vw"></ion-icon>
+        </div>
+      </div> 
+    </ion-item>
+    
+
+    <ion-item>
+      <div style="padding-top: 1em; padding-bottom: 1em">
+        <span style="padding: 0 1em 0 0;color: #999999;">Select Skills</span>
+        <span style="border-radius: 20px;background: #488aff;padding: 4px 7px;color: #fff;font-size: 12px;" (click)="selectSkills()">Add +</span>
+      </div>
+    </ion-item>
+    <ion-item>
+      <div style="padding:1em 0">
+        <div *ngFor="let skill of skills;let i=index" class="industry" style="max-width:100% !important;padding:0 2em 0 0; display: flex">
+          <div class="industryName" style="width:50vw; color: #999999; font-weight: 400; font-size: 0.7em" >{{skill.skill}} </div> 
+          <ion-icon class="item-remove" name="close" (click)="removeHobby(i)" style="margin-left: 15vw"></ion-icon>
+        </div>
+      </div>
+    </ion-item>
+    
+</ion-content>

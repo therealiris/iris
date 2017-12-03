@@ -1,0 +1,185 @@
+<ion-header no-border>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Feedback</ion-title>
+    <ion-buttons end >
+      <button ion-button (click)="back()"> BACK</button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+<div style="text-align: center;padding: 1em">
+  <span style="font-size: 1.4em;color: #999999">
+    Your Feedback is valuable to us.
+  </span>
+</div>
+<ion-slides pager style="height: 65vh">
+
+  <ion-slide>
+    <ion-card>
+      <ion-item text-wrap>
+          <ion-label stacked style="font-size: 2em">How often would you use this app?</ion-label>
+          <ion-select [(ngModel)]="times">
+            <ion-option value="no">I would not</ion-option>
+            <ion-option value="1-3">1-3 times a week</ion-option>
+            <ion-option value="3-5">3-5 times a week</ion-option>
+            <ion-option value="more">More than 5 times a week</ion-option>
+          </ion-select>
+        </ion-item >    
+      </ion-card>
+  </ion-slide>
+  <ion-slide>
+    <ion-card>
+      <ion-item text-wrap>
+        <ion-label stacked>Would you suggest any changes or enhancements?</ion-label>
+        <ion-textarea type="text" [(ngModel)]="changes"></ion-textarea>
+      </ion-item>  
+    </ion-card>
+  </ion-slide>
+  <ion-slide>
+    <ion-card>
+      <ion-item  text-wrap>
+        <ion-label stacked>What features do you find most beneficial in IRIS?</ion-label>
+        <ion-textarea type="text" [(ngModel)]="beneficials"></ion-textarea>
+      </ion-item> 
+    </ion-card>
+  </ion-slide>
+  <ion-slide>
+    <ion-card>
+      <ion-item text-wrap>
+        <ion-label>Would your friends/colleagues from the Tech Industry find this app helpful?</ion-label>
+        <ion-select [(ngModel)]="friends">
+          <ion-option value="not sure">Not Sure</ion-option>
+          <ion-option value="no">No</ion-option>
+          <ion-option value="yes">Yes</ion-option>
+        </ion-select>
+      </ion-item>  
+    </ion-card>
+  </ion-slide>
+  <ion-slide>
+    <ion-card>
+      <ion-item  text-wrap>
+        <ion-label stacked>Would you be motivated to compete for Rankings within the IRIS ecosystem?
+        Note: Top 5  people get featured on our social media page and IRIS website every month</ion-label>
+        <ion-textarea type="text" [(ngModel)]="motivation"></ion-textarea>
+      </ion-item>  
+    </ion-card>
+  </ion-slide>
+  <ion-slide>
+    <ion-card>
+        <ion-card-content>
+          <div class="discover-thumb">
+            <img src="assets/img/ud.svg" class="discover-pic">
+          </div>
+          <ion-card-title class="discover-title">
+            Anonymous
+            </ion-card-title>
+          <p class="headline">
+            Full Stack Developer
+          </p>
+          <div style="width:80%;margin-left: 10%;padding-bottom: 1em">
+            <div  style="border-radius: 30px;display: inline-block;color: #656565;padding: 2px 7px;margin:2px; font-size:12px;background: #dadada;">Information</div>
+          </div>
+          <p class="headline">
+            Distance Unavailable
+          </p>
+          <rating [(ngModel)]="dummyrating" readOnly="true"></rating>
+          <div style="width:80%;margin-left: 10%;padding-bottom: 1em">
+            <div style="border-radius: 30px;display: inline-block;color: #656565;padding: 2px 7px;margin:2px; font-size:12px;background: #dadada;">Python</div>
+          </div>
+          
+        </ion-card-content>
+      </ion-card>
+      <div style="text-align:center">
+        <span style="font-size: 0.8em;color:#999999;"> <strong><i>Please refer to question <br>on next slide </i></strong>
+        </span>
+      </div>  
+  </ion-slide>
+  <ion-slide>
+
+    <ion-card>
+      <ion-item text-wrap>
+        
+        <ion-label>Would you utilize a feature, where you can connect with a person as an anonymous entity. Note: Name and distance from user are hidden. Only  industry, designation,Rating, City Location and Picture are revelead.</ion-label>
+        <ion-select [(ngModel)]="anonymous">
+          <ion-option value="No">No</ion-option>
+          <ion-option value="Yes">Yes</ion-option>
+          <ion-option value="Not Sure">Not Sure</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item *ngIf="anonymous=='Yes'"  text-wrap>
+        <ion-label stacked>How much would you be willing to pay per anonymous connection? (in INR)</ion-label>
+        <ion-input type="text" [(ngModel)]="money"></ion-input>
+      </ion-item> 
+    </ion-card>
+  </ion-slide>
+  <!-- <ion-slide>
+    <ion-card>
+      <ion-item *ngIf="anonymous=='Yes'"  text-wrap>
+        <ion-label stacked>How much would you be willing to pay per anonymous connection? (in INR)</ion-label>
+        <ion-input type="text" [(ngModel)]="money"></ion-input>
+      </ion-item>
+    </ion-card>
+  </ion-slide> -->
+</ion-slides>
+<div class="onboarding-next">
+  <button ion-button round right (click)="submitFeedback()">Submit</button>
+</div>
+
+<!-- 
+
+
+
+
+ <ion-list>
+  <ion-item text-wrap>
+    <ion-label>How often would you use this app?</ion-label>
+    <ion-select [(ngModel)]="times">
+      <ion-option value="no">I would not</ion-option>
+      <ion-option value="1-3">1-3 times a week</ion-option>
+      <ion-option value="3-5">3-5 times a week</ion-option>
+      <ion-option value="more">More than 5 times a week</ion-option>
+    </ion-select>
+  </ion-item >
+  <ion-item style="padding-top:3em" text-wrap>
+    <ion-label stacked>Would you suggest any changes or enhancements?</ion-label>
+    <ion-input type="text" [(ngModel)]="changes"></ion-input>
+  </ion-item>
+  <ion-item style="padding-top:3em" text-wrap>
+    <ion-label stacked>What features do you find most beneficial in IRIS?</ion-label>
+    <ion-input type="text" [(ngModel)]="beneficials"></ion-input>
+  </ion-item>
+  <ion-item text-wrap>
+    <ion-label>Would your friends/colleagues from the Tech Industry find this app helpful?</ion-label>
+    <ion-select [(ngModel)]="friends">
+      <ion-option value="not sure">Not Sure</ion-option>
+      <ion-option value="no">No</ion-option>
+      <ion-option value="yes">Yes</ion-option>
+    </ion-select>
+  </ion-item>
+  <ion-item style="padding-top:3em" text-wrap>
+    <ion-label stacked>Would you be motivated to compete for Rankings within the IRIS ecosystem?
+    Note: Top 5  people get featured on our social media page and IRIS website every month</ion-label>
+    <ion-input type="text" [(ngModel)]="motivation"></ion-input>
+  </ion-item>
+  <ion-item text-wrap>
+    <ion-label>Would you utilize a feature, where you can connect with a person as an anonymous entity. Note: Name and distance from user are hidden. Only  industry, designation,Rating, City Location and Picture are revelead.</ion-label>
+    <ion-select [(ngModel)]="anonymous">
+      <ion-option value="No">No</ion-option>
+      <ion-option value="Yes">Yes</ion-option>
+      <ion-option value="Not Sure">Not Sure</ion-option>
+    </ion-select>
+  </ion-item>
+  <ion-item *ngIf="anonymous=='Yes'" style="padding-top:3em" text-wrap>
+    <ion-label stacked>How much would you be willing to pay per anonymous connection? (in INR)</ion-label>
+    <ion-input type="text" [(ngModel)]="money"></ion-input>
+  </ion-item>
+  <div class="onboarding-next">
+    <button ion-button round right (click)="submitFeedback()">Submit</button>
+  </div>
+</ion-list> -->
+</ion-content>

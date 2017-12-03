@@ -1,0 +1,38 @@
+<ion-header no-border>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>List</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="openModal()">
+        <ion-icon name="person"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-slides pager>
+
+    <ion-slide *ngFor="let item of items" (click)="itemTapped($event, item)" class="iris-slide">
+      <ion-card>
+        <ion-card-content>
+          <div class="discover-thumb">
+            <img src="//ionicframework.com/img/docs/spengler.jpg" class="discover-pic">
+          </div>
+          <ion-card-title class="discover-title">
+            {{item.title}}
+            </ion-card-title>
+          <p>
+            The most popular industrial group ever, and largely
+            responsible for bringing the music to a mass audience.
+          </p>
+        </ion-card-content>
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
+  <div *ngIf="selectedItem" padding>
+    You navigated here from <b>{{selectedItem.title}}</b>
+  </div>
+</ion-content>

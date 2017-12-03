@@ -1,0 +1,60 @@
+on-two{
+	.item-md{
+		font-size:0.8em;
+	}
+	.content{
+		background:#fff;
+	}
+	.toolbar-title{
+		color:#5e8af2;
+		font-weight:400;
+	}
+	.searchbar .searchbar-input{
+		color:#676767;
+		font-size:1em;
+	}	
+}
+.item-select{
+	padding-top:1em;
+}
+.typeCheck-left{
+	display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    border-radius: 26px;
+    background: #5e8af2;
+    color: white;
+    outline: none;
+    font-size: 12px;
+    margin: 0 1em 0 2.6em;
+    padding: 0 0.2em !important;
+}
+.typeCheck-right{
+	display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    border-radius: 26px;
+    background: #5e8af2;
+    color: white;
+    outline: none;
+    font-size: 12px;
+    margin: 0 2.6em 0 1em;
+    padding: 0 0.2em !important;
+}
+.typeBox{
+	display:flex;
+	text-align:center;
+	background:#fff;
+}
+.checktick{
+	margin:0 8px !important;
+}
+
+.checkbox-md .checkbox-icon{
+	border-style:thin;
+	border-color:#5e8af2;
+	border-radius:1em;
+}
+.industry{
+	max-width:80% !important;
+}

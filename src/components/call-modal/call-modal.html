@@ -1,0 +1,45 @@
+<!-- <ion-header>
+	<ion-navbar color="{{callService.isInCall ? 'primary' : 'danger'}}">
+		<ion-title>
+			<span *ngIf="callService.isAnswering">Incoming Call from <b>{{callService.contact.name || callService.contact.username}}</b></span>
+			<span *ngIf="callService.isCalling">Calling <b>{{callService.contact.name || callService.contact.username}}</b></span>
+			<span *ngIf="callService.isInCall"><b>{{callService.contact.name || callService.contact.username}}</b></span>
+		</ion-title>
+	</ion-navbar>
+</ion-header> -->
+
+<ion-content scroll="false">
+	<div style="text-align: center;padding-top: 14em">
+		<span style="font-size: 1.4em;color: #fff" *ngIf="callService.isAnswering">Incoming Call from <b>{{callService.contact.name || callService.contact.username}}</b></span>
+		<span style="font-size: 1.4em;color: #fff" *ngIf="callService.isCalling">Calling <b>{{callService.contact.name || callService.contact.username}}</b></span>
+		<span style="font-size: 1.4em;color: #fff" *ngIf="callService.isInCall"><b>{{callService.contact.name || callService.contact.username}}</b></span>
+		<br>
+		
+	</div>
+	<div style="text-align: center;padding-top: 4em">
+		<span style="font-size: 6em; color: #fff">
+			<ion-icon name="call"></ion-icon>
+		</span>
+	</div>
+	<div class="call-buttons inCallUI" style="text-align: center;padding-top: 2em">
+		<button style="padding: 0.6em" ion-button round icon-only color="secondary" class="button-answering" *ngIf="callService.isAnswering" (click)="callService.answer()"><ion-icon name="call"></ion-icon></button>
+		<button style="padding: 0.6em" ion-button round icon-only color="danger" class="button-answering" *ngIf="callService.isAnswering" (click)="callService.ignore()"><ion-icon name="close"></ion-icon></button>
+
+		<button style="padding: 0.6em" ion-button round icon-only outline color="danger" class="button-calling" *ngIf="callService.isCalling" (click)="callService.cancel()"><ion-icon name="close"></ion-icon></button>
+
+		<!-- <button style="padding: 0.6em" ion-button round icon-only outline color="light" class="button-incall" *ngIf="callService.isInCall" (click)="callService.flip()"><ion-icon name="reverse-camera"></ion-icon></button> -->
+		<button style="padding: 0.6em" ion-button round icon-only outline color="danger" class="button-incall" *ngIf="callService.isInCall" (click)="endCall()"><ion-icon name="close"></ion-icon></button>
+		<button style="padding: 0.6em" ion-button round icon-only outline color="light" class="button-incall" *ngIf="callService.isInCall" (click)="callService.mute()">
+			<ion-icon name="mic-off" *ngIf="!callService.muted"></ion-icon>
+			<ion-icon name="mic" *ngIf="callService.muted"></ion-icon>
+		</button>
+		<button style="padding: 0.6em" ion-button round icon-only outline color="light" class="button-incall" *ngIf="callService.isInCall" (click)="switchAudio()">
+			<ion-icon name="volume-off" *ngIf="!audioSwitched"></ion-icon>
+			<ion-icon name="volume-up" *ngIf="audioSwitched"></ion-icon>
+		</button>
+	</div>
+	<div class="videos inCallUI" style="display: none;">
+		<video id="remote" autoplay="true" *ngIf="callService.remoteVideo" [src]="callService.remoteVideo" style="height:65vh; width:100vw" ></video>
+		<video   id="local" autoplay="true" muted="muted" *ngIf="callService.localVideo" [src]="callService.localVideo" [ngClass]="{preview: callService.isCalling || callService.isAnswering}"  style="height: 30vh"></video>
+	</div>
+</ion-content>

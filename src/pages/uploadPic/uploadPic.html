@@ -1,0 +1,25 @@
+<ion-header no-border>
+  <ion-navbar>
+  </ion-navbar>
+</ion-header>
+
+ <ion-content padding>
+    <div style="text-align: center;padding: 1.6em">
+      <span style="color: #999999; font-size: 1.6em; font-weight: 200;">Welcome to IRIS</span>
+    </div>
+    <div style="text-align: center;">
+      <h3 style="color: #757572; font-size: 1em; font-weight: 200;" [hidden]="lastImage !== null">Upload your picture to build your profile</h3>
+    </div>
+    <div style="width: 14em; border-radius: 49%;border-color: rgba(94, 138, 242, 0.25);margin:3em;border-width: thick;border-style: solid; height:14em;overflow: hidden;">
+      <img id="userPic" src="{{lastImage?pathForImage(lastImage):'assets/img/ud.svg'}}" (click)="presentActionSheet()">
+    </div>
+  
+  <div style="text-align: center;">
+    <span style="color:red">*</span><span style="color: #757572; font-size: 1em; font-weight: 200;">Picture is mandatory</span>
+  </div>
+  <div class="onboarding-next" style="text-align: center; padding-top: 5em">
+    <button ion-button round (click)="uploadFirebase()" [disabled]="lastImage===null">Next</button>
+  </div>
+</ion-content>
+ 
+

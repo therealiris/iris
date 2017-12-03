@@ -1,0 +1,30 @@
+detailCard{
+	.item{
+		padding: 1em 2em;
+	}
+}
+.detailCard{
+	width:80vw;
+	margin : 10vw;
+	display:inline-block !important; 
+}
+.requestSpace{
+	text-align:center;
+}
+.request-pic{
+	display:inline;
+	height: 11em !important;
+	width: 11em !important;
+    padding: 1em;
+    border-radius: 50%;
+}
+.request-btn{
+	padding-top:2em;
+}
+.detailBtn{
+	margin:1em;
+}
+.reason{
+	font-weight:300;
+	color:#999999;
+}

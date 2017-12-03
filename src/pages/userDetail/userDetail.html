@@ -1,0 +1,72 @@
+<ion-card class="detailCard" *ngIf="type==1">
+  <div style="padding:1em;width:100%">
+    <span style="color: #999999" (click)="justDismiss()"><ion-icon name="close"></ion-icon></span>
+  </div>
+  <ion-card-content class="request-card">
+    <div class="discover-thumb">
+      <img src="{{user.pictureUrl}}" class="request-pic">
+    </div>
+    <ion-card-title class="discover-title">
+      {{user.fullName}}
+      </ion-card-title>
+    <p class="headline">
+      {{user.headline}}
+    </p>
+    <!-- <rating [(ngModel)]='rate[i]' readOnly="false"></rating> -->
+    <!-- <div style="width:80%;margin-left: 10%;padding-bottom: 1em">
+      <div *ngFor="let skillItem of item.skills" style="border-radius: 30px;display: inline-block;color: #656565;padding: 2px 7px;margin:2px; font-size:12px;background: #dadada;">{{skillItem.skill}}</div>
+    </div> -->
+    <div class="question-section">
+      <span class="reason">
+        {{reasonHeading}}
+      </span>
+      <br>
+      <span class="reason">
+        {{reasonMessage}}
+      </span>
+    </div>
+    <div class="request-btn">
+      <button ion-button round (click)="acceptRequest()" class="detailBtn">Accept</button>
+      <button ion-button round (click)="rejectRequest()" class="detailBtn">Reject</button>
+    </div>
+  </ion-card-content>
+</ion-card>
+<ion-card class="detailCard" *ngIf="type==2">
+  <div style="padding:1em;width:100%">
+    <span style="color: #999999" (click)="justDismiss()"><ion-icon name="close"></ion-icon></span>
+  </div>
+  <ion-card-content class="request-card">
+    <div class="discover-thumb">
+      <img src="{{user.eventObject.with.pictureUrl}}" class="request-pic">
+    </div>
+    <ion-card-title class="discover-title">
+      {{user.eventObject.with.fullName}} 
+      </ion-card-title>
+    <p class="headline">
+      scheduled a {{user.eventObject.type}} 
+    </p>
+    <!-- <rating [(ngModel)]='rate[i]' readOnly="false"></rating> -->
+    <!-- <div style="width:80%;margin-left: 10%;padding-bottom: 1em">
+      <div *ngFor="let skillItem of item.skills" style="border-radius: 30px;display: inline-block;color: #656565;padding: 2px 7px;margin:2px; font-size:12px;background: #dadada;">{{skillItem.skill}}</div>
+    </div> -->
+    <div class="question-section">
+      <span class="reason">
+        {{user.eventObject.from}} - {{user.eventObject.to}}
+      </span>
+      <br>
+      <div style="padding:1em">
+        <span class="reason" style="font-weight: 900">
+          {{user.eventObject.agenda}}
+        </span>
+      </div>
+      
+    </div>
+    <div class="request-btn">
+      <button ion-button round (click)="openCalendar()" class="detailBtn">Check Calendar</button>
+      <button ion-button round (click)="acceptRequest()" class="detailBtn">Accept</button>
+      <button ion-button round (click)="rejectRequest()" class="detailBtn">Reject</button>
+    </div>
+  </ion-card-content>
+</ion-card>
+  
+

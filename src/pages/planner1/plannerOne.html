@@ -1,0 +1,28 @@
+<ion-header no-border>
+  <ion-navbar color="primary">
+    <ion-title>Select User</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="dismiss()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+  <!-- <ion-searchbar (ionInput)="getItems($event)" class="search-user" style="padding-top: 2em"></ion-searchbar> -->
+  <ion-list class="user-list">
+    <ion-item *ngFor="let connection of connections; let i=index" (click)="selectUser(i)">
+      <div class="conn-list-item">
+       <div class="thumbnail">
+         <img src={{connection.pictureUrl}} class="connection-image">
+       </div>
+       <div class="conn-content">
+         <span>{{connection.fullName}}</span> <br>
+         <!-- <span>Meeting : 7:00 P.M to 10 P.M</span> -->
+       </div> 
+      </div>
+    </ion-item>
+  </ion-list>
+</ion-content>

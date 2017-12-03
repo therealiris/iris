@@ -1,0 +1,45 @@
+<ion-header no-border>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>My Connections({{numberOfConnections}})</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="openNotifications()">
+        <ion-icon name="notifications"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-searchbar (ionInput)="getItems($event)" class="conn-search"></ion-searchbar>
+  <ion-list class="conn-list">
+  <ion-item-sliding #item class="conn-slide" *ngFor="let connection of connections; let i=index" >
+    <ion-item>
+      <div class="conn-list-item">
+       <div class="thumbnail">
+         <img src={{connection.pictureUrl}} class="connection-image">
+       </div>
+       <div class="conn-content">
+         <span>{{connection.fullName}}</span> <br>
+         <!-- <span>Meeting : 7:00 P.M to 10 P.M</span> -->
+       </div> 
+      </div>
+    </ion-item>
+
+    <ion-item-options side="right">
+      <button class="slide-button" ion-button (click)="createChat(i)">
+        <ion-icon name="chatboxes"></ion-icon>
+        Chat
+      </button>
+      <button ion-button class="slide-button" (click)="createCall(i)">
+        <ion-icon name="call"></ion-icon>
+        Call
+      </button><button class="slide-button" ion-button (click)="schedule(i)">
+        <ion-icon name="calendar"></ion-icon>
+        Meet
+      </button>
+    </ion-item-options>
+  </ion-item-sliding>
+</ion-list>
+</ion-content>

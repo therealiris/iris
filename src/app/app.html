@@ -1,0 +1,25 @@
+<span class="hamNotification" *ngIf="hamburgerNotification  && !otherPage">.</span>
+<span class="newNotification" *ngIf="unreadNotification  && !otherPage">.</span>
+<ion-menu [content]="content">
+  <ion-content>
+    <ion-list>
+      <div class="item item-avatar-menu" (click)="showProfile()" menuClose>
+        <img src="{{user.pictureUrl}}" class="avatar-pic">
+        <!-- <ion-icon name="ios-create-outline" class="avatar-edit" (click)="getClicked()"></ion-icon> -->
+        <p class="avatar-name">{{user.fullName}}</p>
+        <p class="avatar-headline">{{user.designation}}</p>
+      </div>
+      <ion-item menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)" class="menu-button" [class.feedbackItem]="p.title==='Feedback'" [class.selectedMenuItem] = "p.selected">
+        <button menuClose ion-item class="menu-button">
+          <ion-icon name={{p.iconName}} class="menu-icon"></ion-icon>
+          {{p.title}}
+          <span *ngIf = "p.title==='My Connections' && unread!=0" style="border-radius:10%; padding:0 10px; background:#11b8ff; color:#fff; margin-left: 5vw">{{unread}}</span>
+        </button>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
+

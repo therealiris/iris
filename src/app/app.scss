@@ -1,0 +1,124 @@
+// http://ionicframework.com/docs/v2/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+// Menu Avatar
+
+.hamNotification{
+    position: absolute;
+    top: 0em;
+    z-index: 9;
+    left: 0.6em;
+    color: #00e4aa;
+    font-size: 5em;
+    margin-top:-0.4em
+}
+
+.newNotification{
+    position: absolute;
+    top: 0em;
+    z-index: 9;
+    right: 0.3em;
+    color: #00e4aa;
+    font-size: 5em;
+    margin-top:-0.4em
+}
+.item.selectedMenuItem{
+    border-style: solid;
+    border-width: 0 1em 0 0;
+    border-color: #6693ff;
+}
+.item.feedbackItem{
+  margin-top : 4em
+}
+.item-avatar-menu{
+  background-color:rgba(87,125,215,1) !important;
+  text-align:center;
+  padding:1.5em;
+  .avatar-pic{
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.25);
+    padding: 0.2em;
+    width: 38vw;
+  }
+  .avatar-name{
+    color:#fff;
+    font-size: 16px;
+    font-weight:600;
+    margin:5px;
+  }
+  .avatar-headline{
+    color:#e2e2e2;
+    font-size:12px;
+    font-weight:500;
+    margin:5px;
+  }
+  .avatar-edit{
+    border-style: solid;
+    border-radius: 50%;
+    border-width: thick;
+    background: #fff;
+    border: none;
+    color: #207ce5;
+    padding: 7px 8px;
+    font-size: 1.2em;
+    position: absolute;
+    top: 6.7em;
+    right: 5em;
+    box-shadow:0px 0px 4px 0px #fff;
+  }
+}
+.item-md.item-block .item-inner {
+  border-bottom: none !important; 
+}
+.item-md.item-block .item-inner {
+  border-bottom: none !important;
+}
+.menu-button{
+  font-weight:400;
+  color: #888888;
+  height:7vh;
+  font-size : 14px;
+}
+.menu-button .label{
+  margin:0;
+}
+.menu-icon{
+  padding:1em 1.8em 0em 0em;
+  font-size:1.4em;
+  font-weight:800;
+}
+.toolbar-background{
+  background:transparent;
+}
+.content{
+  background: rgba(116,203,253,1);
+background: -moz-linear-gradient(top, rgba(116,203,253,1) 0%, rgba(101,157,241,1) 54%, rgba(255,255,255,1) 55%, rgba(255,255,255,1) 55%, rgba(255,255,255,1) 100%);
+background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(116,203,253,1)), color-stop(54%, rgba(101,157,241,1)), color-stop(55%, rgba(255,255,255,1)), color-stop(55%, rgba(255,255,255,1)), color-stop(100%, rgba(255,255,255,1)));
+background: -webkit-linear-gradient(top, rgba(116,203,253,1) 0%, rgba(101,157,241,1) 54%, rgba(255,255,255,1) 55%, rgba(255,255,255,1) 55%, rgba(255,255,255,1) 100%);
+background: -o-linear-gradient(top, rgba(116,203,253,1) 0%, rgba(101,157,241,1) 54%, rgba(255,255,255,1) 55%, rgba(255,255,255,1) 55%, rgba(255,255,255,1) 100%);
+background: -ms-linear-gradient(top, rgba(116,203,253,1) 0%, rgba(101,157,241,1) 54%, rgba(255,255,255,1) 55%, rgba(255,255,255,1) 55%, rgba(255,255,255,1) 100%);
+background: linear-gradient(to bottom, rgba(116,203,253,1) 0%, rgba(101,157,241,1) 54%, rgba(255,255,255,1) 55%, rgba(255,255,255,1) 55%, rgba(255,255,255,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#74cbfd', endColorstr='#ffffff', GradientType=0 );
+}
+.bar-button-default-md, .bar-button-clear-md-default, .bar-button-md-default{
+  color:#fff;
+}
+.toolbar-title{
+  color:#fff;
+  font-weight:300;
+  font-size:16px;
+}

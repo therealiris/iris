@@ -1,0 +1,52 @@
+.no-event{
+	padding:1em;
+	text-align:center;
+}
+calendar{
+	.content{
+		background: #ffffff;
+	}
+}
+
+.calendar-image{
+	border-radius:50%;
+	width:10vh;
+	margin-top:30%;
+}
+.calendar-content{
+	text-align:left;
+	padding:5%;
+	color:grey;
+	font-size:16px;
+}
+.info-panel{
+	
+		border-radius: 2em;
+		background:#5e84f9;
+		padding:0.2em 1em; 
+		color: #fff; 
+		font-size: 0.9em;
+	}
+.info-panel-call{
+	
+		border-radius: 2em;
+		background:#31bd52;
+		padding:0.2em 1em; 
+		color: #fff; 
+		font-size: 0.9em;
+	}
+.info-panel-disabled{
+
+	border-radius: 2em;
+	background:#999999;
+	padding:0.2em 1em; 
+	color: #fff; 
+	font-size: 0.9em;
+
+}
+.status-pending{
+	color:#5e84f9
+}
+.status-confirmed{
+	color:#31bd52;
+}

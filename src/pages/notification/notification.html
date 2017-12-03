@@ -1,0 +1,115 @@
+<ion-header >
+  <ion-navbar hideBackButton="true">
+    <ion-title>Notifications</ion-title>
+    <ion-buttons end>
+      <button ion-button (tap)="dismiss()" style="padding-right: 2vw">
+        <ion-icon name="close" style="font-size: 1.6em"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<!-- <ion-content>
+  <div class="notification-container">
+    <ion-item *ngIf="notifications?.length<1" class="notification-item">
+      No Notifications
+    </ion-item>
+    <ion-item *ngFor="let notification of notifications; let i=index" text-wrap class="notification-item" >
+      <span *ngIf="notification.type==1">
+        {{notification.fullName}}, {{notification.headline}}, would like to connect with you for "{{notification.reason}}"
+      </span>
+      <span *ngIf="notification.type==2">
+        {{notification.eventObject.with.fullName}} has requested a meeting from {{notification.eventObject.from}} to {{notification.eventObject.to}}. Agenda : {{notification.eventObject.agenda}}
+      </span>
+      
+          <div>
+            <div class="accept-notification" *ngIf = "notification.type==1 || notification.type==2">
+              <span [attr.data-uid]="notification.uid" [attr.data-index]="i"  (click)="acceptConnect($event)">Accept</span>
+            </div>
+            <div class="remove-notification" *ngIf = "notification.type==1 || notification.type==2">
+              <span [attr.data-uid]="notification.uid" [attr.data-index]="i" (click)="rejectConnect($event)">Reject</span>
+            </div>
+            <div class="accept-notification" *ngIf = "notification.type==0">
+              <span>remove</span>
+            </div>
+          </div>
+    </ion-item>
+  </div>
+</ion-content> -->
+<ion-content>
+  <ion-segment [(ngModel)]="notificationType" style="background:#5e8af2">
+    <ion-segment-button value="connections" style="color:#fff">
+      Connections
+    </ion-segment-button>
+    <ion-segment-button value="meetings" style="color:#fff">
+      Meetings
+    </ion-segment-button>
+    <ion-segment-button value="general" style="color:#fff">
+      General
+    </ion-segment-button>
+  </ion-segment>
+  <div [ngSwitch]="notificationType">
+  <ion-list *ngSwitchCase="'connections'">
+    <ion-item *ngFor="let request of requests; let i=index" style="border-bottom-style: solid;border-bottom-width: thin;border-bottom-color: #dadada" (click)="showConnectionDetails(i)">
+      <div>
+        <ion-avatar item-start style="display: flex!important;">
+          <img src="{{request.pictureUrl}}">
+          <div style="width: 80vw; margin-left: 2vw">
+            <span style="padding: 8px 0;white-space: normal;text-align: right; font-size: 12px; color:#666">{{request.fullName}} would like to connect with you</span>
+             <!-- <div>
+              <div class="accept-notification" >
+                <span (click)="acceptConnect($event)" [attr.data-uid]="request.uid" [attr.data-index]="i">Accept</span>
+              </div>
+              <div class="remove-notification" >
+                <span (click)="rejectConnect($event)" [attr.data-uid]="request.uid" [attr.data-index]="i">Reject</span>
+              </div>
+            </div> -->
+          </div>
+        </ion-avatar>
+      </div>
+    </ion-item>
+  </ion-list>
+
+  <ion-list *ngSwitchCase="'meetings'">
+    <ion-item *ngFor="let meeting of meetings; let i=index" style="border-bottom-style: solid;border-bottom-width: thin;border-bottom-color: #dadada" (click)="showMeetingDetails(i)">
+      <div>
+        <ion-avatar item-start style="display: flex!important;">
+          <img src="{{meeting.eventObject.with.pictureUrl}}">
+          <div style="width: 80vw; margin-left: 2vw">
+            <span style="padding: 8px 0;white-space: normal;text-align: right; font-size: 12px; color:#666">{{meeting.eventObject.with.fullName}} has scheduled a {{meeting.eventObject.type}} with you on {{meeting.eventObject.from}}</span>
+            <!--  <div>
+              <div class="accept-notification" >
+                <span (click)="acceptMeeting($event)" [attr.data-uid]="meeting.notificationId" [attr.data-index]="i">Accept</span>
+              </div>
+              <div class="remove-notification" >
+                <span (click)="rejectMeeting($event)" [attr.data-uid]="meeting.notificationId" [attr.data-index]="i">Reject</span>
+              </div>
+              <div class="remove-notification" >
+                <span (click)="rescheduleMeeting($event)" [attr.data-uid]="meeting.notificationId" [attr.data-index]="i">Reschedule</span>
+              </div>
+            </div> -->
+          </div>
+        </ion-avatar>
+      </div>
+    </ion-item>
+  </ion-list>
+  <ion-list *ngSwitchCase="'general'">
+    <ion-item *ngFor = "let g of general; let i=index" style="border-bottom-style: solid;border-bottom-width: thin;border-bottom-color: #dadada">
+      <div>
+        <div style="width: 90vw; margin-left: 2vw">
+          <span style="padding: 8px 0;white-space: normal;text-align: right; font-size: 15px; color:#666">{{g.message}}</span>
+           <!-- <div>
+            <div class="accept-notification" >
+              <span (click)="removeGeneral(i)">Remove</span>
+            </div>
+          </div> -->
+        </div>
+      </div>
+    </ion-item>
+    <div style="text-align: right;padding: 1em" (click)="clearGeneral()">
+      <span style="padding:2px 8px;border-radius: 1em;border-style: solid;border-width: thin;color: #5e8af2;border-color: #5e8af2">CLEAR</span>
+    </div>
+
+  </ion-list>
+</div>
+</ion-content>

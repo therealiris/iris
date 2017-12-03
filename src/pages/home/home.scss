@@ -1,0 +1,42 @@
+page-home {
+	.content{
+		background:#fff;
+	}
+	.slides{
+		height:70vh;
+		
+	}
+	.welcome-slides{
+		height:60vh;
+		padding:1em
+	}
+	.toolbar-title{
+		font-weight:400;
+		font-size:20px;
+		color:#6f6f6f ;
+		padding:3vh 0 5vh 0;
+	}
+	.linked-in{
+		background:#5e8af2;
+		box-shadow:0px 7px 14px -1px #214275;
+		text-transform:none;
+		text-decoration:bold;
+		.button-inner{
+			font-weight:700
+		}
+	}
+	.icon{
+		font-size:30px !important;
+	}
+	.welcome-desc{
+		color:#adadad;
+		font-size:17px;
+		font-weight:500
+	}
+	.card{
+		box-shadow:0px 7px 11px 1px #d5e6ff;
+	}
+}
+.toolbar-background{
+  background:transparent;
+}

@@ -1,0 +1,72 @@
+<ion-header no-border >
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Planner</ion-title>
+    <ion-buttons end >
+      <button ion-button (click)="back()"> BACK</button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+  <div *ngIf="eventList.length===0" style="text-align: center; padding-top: 2em">
+      <span style="color: #999999"><i>You have no calls or meetings scheduled.</i></span>
+    </div>
+  <ion-list class="chat-list">
+    
+    <ion-card *ngFor="let event of eventList; let i=index">
+
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="{{event.with.pictureUrl}}">
+        </ion-avatar>
+        <h2>{{event.type}} with {{event.with.fullName}}</h2>
+        <p><strong>From : {{event.from}}</strong></p>
+        <p><strong>To : {{event.to}}</strong></p>
+        <p text-wrap><strong>Agenda : {{event.agenda}}</strong></p>
+        <p *ngIf="event.type==='meeting'"><strong>Venue : {{event.venue}}</strong></p>
+      </ion-item>
+
+      <ion-row>
+        <ion-col center text-center>
+          <span *ngIf="event.pending" class="status-pending"><strong>Pending</strong>
+         </span>
+         <span *ngIf="!event.pending" class="status-confirmed"><strong>Confirmed</strong>
+         </span>
+        </ion-col>
+        <ion-col center text-center>
+          <span (click)="syncItem(i)" class="info-panel"><ion-icon name="sync"></ion-icon>  Sync</span>
+        </ion-col>
+        <ion-col center text-center>
+          <!-- <span *ngIf="!event.active" class="info-panel">Inactive</span> -->
+          <span *ngIf="event.active" class="info-panel-call" (click)="call(i)"><ion-icon name="call"></ion-icon> Call</span>
+          <span *ngIf="!event.active" class="info-panel-disabled"><ion-icon name="call"></ion-icon> Call</span>
+        </ion-col>
+      </ion-row>
+
+    </ion-card>
+
+  </ion-list>
+ <!-- <ion-card>
+    <ion-card-content>
+      <div class="no-event">
+        No Events
+      </div>
+    </ion-card-content>
+  </ion-card> -->
+   <ion-fab right bottom #fab style="padding:1.4em">
+     <button ion-fab color="primary" ><ion-icon name="ios-add"></ion-icon></button>
+     <ion-fab-list side="left" style="padding:1em 1.4em;color: #999999">
+      Call
+      <button ion-fab color="primary"  (click)="schedule('call')" ><ion-icon name="ios-call"></ion-icon></button>
+    </ion-fab-list>
+    <ion-fab-list side="top" style="padding:1em 2em 1em 0;color: #999999">
+      Meeting
+      <button ion-fab color="primary"  (click)="schedule('meeting')" ><ion-icon name="md-pin"></ion-icon></button>
+    </ion-fab-list>
+  </ion-fab>
+</ion-content>
+

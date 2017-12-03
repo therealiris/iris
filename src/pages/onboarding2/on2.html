@@ -1,0 +1,30 @@
+<ion-header no-border>
+  <ion-navbar>
+    <ion-title>Select Industry</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="passSkills()">
+        <span style="color:#5e8af2">Done</span>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+  <div *ngIf="selectedList.length>0" style="display: grid;text-align: center;max-height:9em" >
+    <div *ngFor="let selection of selectedList" style="max-width: 16em; padding:3px; background: #5e8af2; color: #fff;margin-top: 3px;max-height: 3em; border-radius: 0 1em 1em 0">
+      {{selection}}
+    </div>
+  </div>
+  <div *ngIf="selectedList.length===0" style="display: grid;text-align: center;height:9em" >
+    <span style="padding-top: 3em;color: #999999"><i>*Please select industries relevant to you (max 3)</i> </span>
+  </div>
+</ion-header>
+
+<ion-content>
+
+<ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+
+<ion-list>
+  <ion-item *ngFor="let item of items">
+    <ion-label>{{item}}</ion-label>
+    <ion-checkbox (ionChange)="updateList(item, $event)" checked="filled[item]"></ion-checkbox>
+  </ion-item>
+</ion-list>
+</ion-content>

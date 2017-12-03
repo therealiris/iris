@@ -1,0 +1,27 @@
+<ion-content>
+  <ion-card-content>
+    <p class="headline" style = "text-align: center; font-weight:900">
+      Please rate the user's skillsets based on your interaction with this user. Ratings provided are anonymous.
+    </p>
+    <div class="discover-thumb">
+      <img src="{{user.pictureUrl}}" class="discover-pic" (load)="loaded = true" [ngClass]="{'img-loaded':loaded}" [hidden]="!loaded">
+      <ion-spinner [ngClass]="{'center':true}" *ngIf="!loaded" style="padding-top: 2em;"></ion-spinner>
+    </div>
+    <ion-card-title class="discover-title" style = "text-align: center">
+      {{user.fullName}}
+      </ion-card-title>
+    
+    <div style="width:80%;margin-left: 10%;padding-bottom: 0.6em">
+      <div *ngFor="let skillItem of user.skills; let i= index" style = "text-align: center">
+      <div style="border-radius: 30px;display: inline-block;color: #656565;padding: 2px 7px;margin:2px; font-size:12px;background: #dadada;">
+      	{{skillItem.skill}}
+      </div>
+      <rating [(ngModel)] = rate[i].rating ></rating>
+      </div>
+    </div>
+    <div class="connect-btn" style="padding:0.6em">
+      <span style="padding-right: 0.2em;color:#5e8af2" (click)="rateLater()"><u>Rate Later</u></span>
+      <button ion-button round [disabled]="allowed" (click)="submitRating()">Done</button>
+    </div>
+  </ion-card-content>
+</ion-content>

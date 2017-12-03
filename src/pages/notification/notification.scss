@@ -1,0 +1,45 @@
+notification {
+.segment-button.segment-activated{
+    border-color:#b1c5e6 !important;
+    opacity:1;
+    border-width:0.5em !important;
+}
+.content{
+	background:white;
+}
+
+.toolbar-background{
+    background:#5e8af2;
+}
+}
+
+.notification-container{
+	padding:1em;
+}
+.notification-item{
+    margin: 1em 0;
+    border-radius: 4px;
+    box-shadow: 0px 0px 31px 1px grey;
+    color:grey;
+    font-weight:500;
+}
+.remove-notification{
+	float: right;
+    color: #5e8af2;
+    padding: 4px 8px;
+    border-style: solid;
+    border-width: thin;
+    border-radius: 20px;
+    margin:4px;
+    font-size:12px;
+}
+.accept-notification{
+	float: right;
+    color: #5e8af2;
+    padding: 4px 8px;
+    border-style: solid;
+    border-width: thin;
+    border-radius: 20px;
+    margin:4px;
+    font-size:12px;
+}

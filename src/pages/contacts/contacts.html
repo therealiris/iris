@@ -1,0 +1,80 @@
+<ion-header>
+	<ion-navbar color="primary">
+		<button ion-button menuToggle>
+	      <ion-icon name="menu"></ion-icon>
+	    </button>
+		<ion-title>
+			My Connections
+		</ion-title>
+		<!-- <ion-buttons end>
+			<button (click)="goChats()" ion-button icon-only>
+				<ion-icon name="chatbubbles"></ion-icon>
+			</button>
+		</ion-buttons> -->
+		<ion-buttons end >
+	      <button ion-button (click)="back()"> BACK</button>
+	    </ion-buttons>
+	</ion-navbar>
+</ion-header>
+
+<ion-content padding>
+	<ion-segment [(ngModel)]="connectionType" style="background:#5e8af2;padding: 0">
+	    <ion-segment-button value="active" style="color:#fff;font-weight: 600;">
+	      Active
+	    </ion-segment-button>
+	    <ion-segment-button value="pending" style="color:#fff;font-weight: 600">
+	      Pending
+	    </ion-segment-button>
+  	</ion-segment>
+  <div [ngSwitch]="connectionType">
+		<div *ngSwitchCase="'active'">
+			<div *ngIf="contactList.length===0" style="text-align: center; padding-top: 2em">
+		      <div>
+		      	<span style="color: #999999"><i>Start <span style="color: #5e8af2;" (click)="goDiscover()">discovering</span> people and make new connections</i></span>
+		      </div>
+		    </div>
+			<ion-list class="chat-list">
+				<ion-card *ngFor="let contact of contactList; let i=index" >
+			      <ion-row (click)="viewProfile(contact.username)">
+			      	<div style="padding:1em;display:flex">
+			      		<img src="{{contact.image}}" class="connection-image" style="opacity: 1;max-width: 14vw;max-height: 14vw" (load)="loaded = true" [ngClass]="{'img-loaded':loaded}" [hidden]="!loaded">
+			      		<ion-spinner [ngClass]="{'center':true}" *ngIf="!loaded" style="padding-top: 2em;"></ion-spinner>
+			      		<span style="padding: 1em"><strong>{{contact.name}}, {{contact.designation}}  </strong></span>
+			      	</div>
+			      </ion-row>
+
+			      <ion-row>
+			        <ion-col center text-center>
+			          <span class="info-panel" (click)="schedule('call')">Schedule Call</span>
+			        </ion-col>
+			        <ion-col center text-center>
+			          <span class="info-panel" (click)="schedule('meeting')"> Schedule Meet</span>
+			        </ion-col>
+			        <ion-col center text-center>
+			          <span class="info-panel" (click)="chat(contact.id)">Chat</span>
+			        </ion-col>
+			      </ion-row>
+
+			    </ion-card>
+			</ion-list>
+		</div>
+		<div *ngSwitchCase="'pending'">
+			<div *ngIf="pendingList.length===0" style="text-align: center; padding-top: 2em">
+		      <div>
+		      	<span style="color: #999999"><i>No pending requests right now.</i></span>
+		      </div>
+		    </div>
+			<ion-list class="chat-list">
+				<ion-card *ngFor="let contact of pendingList; let i=index" style="opacity:0.5">
+			      <ion-row>
+			      	<div style="padding:1em;display:flex">
+			      		<img src="{{contact.pictureUrl}}" class="connection-image" style="opacity: 1;max-width: 14vw;max-height: 14vw">
+			      		<span style="padding: 1em"><strong>{{contact.fullName}}, {{contact.designation}}  </strong></span>
+			      	</div>
+			      </ion-row>
+
+			    </ion-card>
+			</ion-list>
+		</div>
+	</div>
+</ion-content>

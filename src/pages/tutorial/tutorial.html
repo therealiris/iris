@@ -1,0 +1,59 @@
+<ion-content class="tutorial-modal" (click)="dismiss()" style="max-height: 100vh">
+  
+  <div style="text-align: center;" *ngIf="type==='discover'">
+    <div style="padding: 1vh 12vw 0 0 ; text-align: right" >
+      <span style="font-weight:800;font-size: 0.8em;color: #fff"><i>Tap on the bell to check notifications</i><ion-icon name="ios-arrow-round-forward" style="font-size: 4em"></ion-icon></span>
+    </div>
+    <div style="padding: 0 0 0 6vw; text-align: left" >
+      <span style="font-weight:800;font-size: 0.8em;color: #fff"><ion-icon name="ios-arrow-round-up" style="font-size: 4em"></ion-icon><i>Tap on the hamburger to find your menu</i></span>
+    </div>
+    <div style="padding-top: 28vh">
+      <img src="assets/img/tutorial/swipe-arrow.png" style="max-width: 40%" alt="">
+      <span style="font-weight:800;font-size: 0.8em;color: #fff"> <i>Swipe the cards and discover users</i></span>
+    </div>
+    <div style="padding: 18vh 22vw 0 0; text-align: right">
+      <span style="font-weight:800;font-size: 0.8em;color: #fff"> <i>Tap here to filter users based on skills and industry</i><ion-icon name="ios-arrow-round-forward" style="font-size: 4em"></ion-icon></span>
+    </div>
+  </div>
+  <div style="text-align: center;" *ngIf="type==='connections'">
+    <div style="padding-top: 20vh">
+      <img src="assets/img/tutorial/swipe-left.png" style="max-width: 40%" alt="">
+      <span style="font-weight:800;font-size: 0.8em;color: #fff"> <i>Swipe the contact cards</i></span>
+    </div>
+    <div style="text-align: left; padding-left: 3em">
+      <div style="padding-top: 2vh">
+        <span style="font-size: 1em;color: #fff"><ion-icon name="chatbubbles"></ion-icon> <i> Chat with your contacts</i></span>
+      </div>
+      <div style="padding-top: 2vh">
+        <span style="font-size: 1em;color: #fff"><ion-icon name="call"></ion-icon> <i> Schedule calls</i></span>
+      </div>
+      <div style="padding-top: 2vh">
+        <span style="font-size: 1em;color: #fff"><ion-icon name="calendar"></ion-icon> <i>Schedule Meetings</i></span>
+      </div>
+    </div>
+    
+  </div>
+  <div style="text-align: center;" *ngIf="type==='calendar'">
+    <div style="padding-top: 12vh">
+      <span style="font-size: 12vh;color: #fff"><ion-icon name="call"></ion-icon></span>
+    </div>
+    <div style="padding-top: 3vh">
+
+      <span style="font-weight:800;font-size: 1em;color: #fff"> <i>Place calls from planner</i></span>
+    </div>
+    <div style="padding-top: 12vh">
+      <span style="font-size: 12vh;color: #fff"><ion-icon name="calendar"></ion-icon></span>
+    </div>
+    <div style="padding-top: 3vh">
+
+      <span style="font-weight:800;font-size: 1em;color: #fff"> <i>Your events will be listed here</i></span>
+    </div>
+    
+    <div style="padding: 25vh 8vw 0 0">
+
+      <span style="font-weight:800;font-size: 1em;color: #fff"> <i>Tap here to schedule a call or meeting</i> </span>
+      
+    </div>
+  </div>
+
+</ion-content>

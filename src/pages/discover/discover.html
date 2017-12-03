@@ -1,0 +1,82 @@
+<ion-header no-border>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Discover</ion-title>
+    <ion-buttons end style="padding-right: 2vw">
+      <button ion-button (tap)="openNotifications()" style="font-size: 1.6em" [ngClass]="{newNotification : user.notifications.length>0}" >
+        <ion-icon name="notifications"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <!-- <div class="points" style="height:3vh">
+    <span *ngIf="showPoints"> +2 Points</span> 
+  </div> -->
+  <ion-slides class="dsc-slides" (ionSlideDidChange)="slideChanged()">
+    <ion-slide *ngFor="let item of items; let i=index" class="iris-slide">
+      <ion-card class="discover-card" *ngIf="!item.target" >
+        <ion-card-content>
+          <div class="discover-thumb">
+            <img src="{{item.pictureUrl}}" class="discover-pic" (load)="loaded = true" [ngClass]="{'img-loaded':loaded}" [hidden]="!loaded">
+            <ion-spinner [ngClass]="{'center':true}" *ngIf="!loaded" style="padding-top: 2em;"></ion-spinner>
+          </div>
+          <ion-card-title class="discover-title">
+            {{item.fullName}}
+            </ion-card-title>
+          <p class="headline">
+            {{item.designation}}, {{item.currentWorkplace}}
+          </p>
+          <div style="width:80%;margin-left: 10%;padding-bottom: 1em">
+            <div *ngFor="let ind of item.industry" style="border-radius: 30px;display: inline-block;color: #656565;padding: 2px 7px;margin:2px; font-size:12px;background: #dadada;">{{ind}}</div>
+          </div>
+          <p class="headline">
+            {{item.distance}} km away.
+          </p>
+          <rating [(ngModel)]='rate[i]' readOnly="true"></rating>
+          <div style="width:80%;margin-left: 10%;padding-bottom: 1em">
+            <div *ngFor="let skillItem of item.skills" style="border-radius: 30px;display: inline-block;color: #656565;padding: 2px 7px;margin:2px; font-size:12px;background: #dadada;">{{skillItem.skill}}</div>
+          </div>
+          
+        </ion-card-content>
+      </ion-card>
+      <ion-card class="discover-card" *ngIf="item.target" >
+        <ion-card-content>
+          <div class="discover-thumb">
+            <img src="{{item.pictureUrl}}" class="discover-pic" (load)="loaded = true" [ngClass]="{'img-loaded':loaded}" [hidden]="!loaded">
+            <ion-spinner [ngClass]="{'center':true}" *ngIf="!loaded" style="padding-top: 2em;"></ion-spinner>
+          </div>
+          <ion-card-title class="discover-title">
+            {{item.name}}
+            </ion-card-title>
+          <p class="headline">
+            {{item.desc}}
+          </p>
+          <a class="connect-btn" href="{{item.actionUrl}}">View</a>
+        </ion-card-content>
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
+  <div class="connect-btn" *ngIf="!isConnected && !isAds">
+    <button ion-button round [disabled]=isConnected (click)="connect()" >Connect</button>
+  </div>
+  
+  <div class="connect-btn"  *ngIf="isConnected && !isAds" >
+    <span style="color: #5e8af2; font-size: 1.4em"><ion-icon name="checkmark"></ion-icon>Request sent</span>
+  </div>
+  <ion-fab right bottom #fab>
+     <button ion-fab color="primary" ><ion-icon [name]="filter?'ios-funnel':'search'"></ion-icon></button>
+     <ion-fab-list side="left" style="padding:1em 2em">
+      Reset<button ion-fab color="primary"  (click)="clearFilter(fab)" ><ion-icon name="md-undo"></ion-icon></button>
+    </ion-fab-list>
+    <ion-fab-list side="top" style="padding:2em 1em">
+      <button ion-fab color="primary"  (click)="search(fab)" ><ion-icon name="ios-funnel"></ion-icon></button>
+    </ion-fab-list>
+  </ion-fab>
+  <div style="position: absolute;bottom: 2em;left: -2em;" *ngIf="pendingRatings.length>0" (tap) = "showRatings()">
+    <button style="padding: 1em 1em 1em 4em;background: #ecb505;border-radius: 2em;color: #fff;"><ion-icon style="font-size: 2.2em; font-weight: 400" name="ios-people"></ion-icon></button>
+  </div>
+</ion-content>

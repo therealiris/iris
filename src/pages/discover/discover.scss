@@ -1,0 +1,99 @@
+
+rating{
+	ul {
+  padding: 0px;
+ 
+  &.rating li {
+    padding: 5px 5px !important;
+    background: none;
+    color: #ffb400;
+ 
+    ion-icon {
+      font-size: 1.5em;
+    }
+  }
+}
+}
+
+
+discover-list {
+.newNotification{
+	font-size: 1.6em;
+	border-bottom-width: 2px;
+	border-color: #02ff02;
+	border-style: solid;
+	border-radius:0;
+}
+.content{
+ background: linear-gradient(to bottom, #00a9ff 0%,#2b6ad8 45%,#ffffff 45%,#ffffff 46%,#ffffff 100%); 
+}
+ion-fab{
+		padding:1em;
+	}
+	 .img-loaded + ion-spinner {
+		  display:none;
+		}
+		// .center in my case to make the spinner at the center
+		.center{
+		  margin-left: auto;
+		  margin-right: auto;
+		  display: block;
+		}
+	ion-slider{
+		text-align:center;
+		width: 60vw;
+	},
+	.iris-slide{
+		background:transparent;
+		height:50vh;
+	}
+	.iris-slide.swiper-slide{
+	    width: 90vw !important;
+	    margin: 12vh 5vw;
+	    padding: 0 6vw;
+	}
+	
+
+}
+.discover-card{
+	box-shadow:0px 16px 21px -4px rgba(0, 98, 245, 0.25) !important
+}
+.discover-pic{
+	display: inline;
+    height: 6em !important;
+    width: 6em !important;
+    border-radius: 50%;
+    margin: 1em 0 0;
+}
+.card-content{
+	padding:0 !important;
+}
+.hobbies{
+	padding:1vh;
+}
+.headline{
+	color:#848484 !important;
+	padding:0 2em;
+}
+.discover-thumb{
+	text-align:center
+}
+.discover-title{
+	font-size : 16px !important;
+	font-family: AppFont !important;
+}
+.hobbies{
+	color:#0062f5 !important;
+}
+
+.points{
+	color:#fff;
+	text-align:center;
+	transition: all 0.5s ease-in;
+}
+.dsc-slides{
+	height:70vh !important;
+}
+.connect-btn{
+	text-align:center;
+}

@@ -1,0 +1,108 @@
+<ion-header no-border>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+    <ion-title>Profile</ion-title>
+    <ion-buttons end *ngIf="!editable">
+      <button ion-button (click)="editMode(true)">
+        <ion-icon name="md-create"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons end *ngIf="editable">
+      <button ion-button (click)="editMode(false)">
+        <span style="font-weight: 600">SAVE</span>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+<div class="discover-thumb fixed-content" >
+  <img src="{{user.pictureUrl}}"  class="discover-pic" (click)="uploadPic()">
+</div>
+<div padding class="profile-content">
+   <ion-segment [(ngModel)]="profile">
+    <ion-segment-button value="personal">
+      Personal
+    </ion-segment-button>
+    <ion-segment-button value="work">
+      Work
+    </ion-segment-button>
+  </ion-segment>
+
+
+<div [ngSwitch]="profile">
+  <ion-list *ngSwitchCase="'personal'">
+    <ion-item>
+      <ion-label stacked>Full Name</ion-label>
+      <ion-input type="text"  value="{{user.fullName}}" disabled=true></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>E-Mail</ion-label>
+      <ion-input type="text"  value="{{user.email}}" disabled="{{!editable}}" (input)="modify('email',$event.target.value)"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="!editable">
+      <ion-label stacked>Date Of Birth</ion-label>
+      <ion-input type="text"  value="{{user.dob}}" disabled="true"></ion-input>
+    </ion-item>
+    <ion-item class="datetime" style="padding-top: 1em" *ngIf="editable">
+        <ion-label stacked>Date Of Birth</ion-label>
+        <ion-datetime displayFormat="DD/MM/YYYY" max='1997' [(ngModel)]="user.dob"></ion-datetime>
+      </ion-item>
+    <ion-item>
+      <ion-label stacked>Gender</ion-label>
+      <ion-input type="text"  value="{{user.gender}}" disabled=true></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <ion-list *ngSwitchCase="'work'">
+   <ion-item>
+      <ion-label stacked>Designation</ion-label>
+      <ion-input type="text"  value="{{user.designation}}" (input)="modify('designation',$event.target.value)" disabled="{{!editable}}"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Current Workplace</ion-label>
+      <ion-input type="text" value="{{user.currentWorkplace}}" (input)="modify('currentWorkplace',$event.target.value)" disabled="{{!editable}}"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="!editable">
+      <ion-label stacked>Industry</ion-label>
+      <ion-input *ngFor="let industry of user.industry" type="text" value={{industry}} disabled="true"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="editable">
+      <div style="padding-top: 2em; padding-bottom: 1em">
+        <span style="padding: 0 1em 0 0;color: #999999;">Industry</span>
+        <span style="border-radius: 20px;background: #488aff;padding: 4px 7px;color: #fff;font-size: 12px;" (click)="selectIndustry()">Edit +</span>
+      </div>
+    </ion-item>
+    <ion-item *ngIf="editable">
+      <div style="padding:1em 0">
+        <div *ngFor="let ind of user.industry;let i=index" class="industry" style="max-width:100% !important;padding:4px 3em 0; display: flex">
+          <div class="industryName" style="width:50vw; color:#999999; font-weight: 500">{{ind}}</div> 
+          <ion-icon class="item-remove" name="close" (click)="removeIndustry(i)" style="margin-left: 15vw"></ion-icon>
+        </div>
+      </div>
+    </ion-item>
+    <ion-item *ngIf="!editable">
+      <ion-label stacked>Skill</ion-label>
+      <ion-input *ngFor="let skill of user.skills; let i = index" type="text" value={{skill.skill}} disabled="true"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="editable">
+      <div style="padding-top: 2em; padding-bottom: 1em">
+        <span style="padding: 0 1em 0 0;color: #999999;">Add your 3 best skills</span>
+        <span style="border-radius: 20px;background: #488aff;padding: 4px 7px;color: #fff;font-size: 12px;" (click)="selectSkills()">Edit +</span>
+      </div>
+    </ion-item>
+    <ion-item *ngIf="editable">
+      <div style="padding:1em 0">
+        <div *ngFor="let skill of user.skills;let i=index" class="industry" style="max-width:100% !important;padding:0 2em 0 0; display: flex">
+          <div class="industryName" style="width:50vw; color: #999999; font-weight: 400; font-size: 0.7em" >{{skill.skill}} </div> 
+          <ion-icon class="item-remove" name="close" (click)="removeHobby(i)" style="margin-left: 15vw"></ion-icon>
+        </div>
+      </div>
+    </ion-item>
+  </ion-list>
+</div>
+</div>
+</ion-content>
