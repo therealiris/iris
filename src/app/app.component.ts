@@ -1,4 +1,4 @@
-  import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform, ToastController, Events } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -11,7 +11,6 @@ import { OnboardingOne } from '../pages/onboarding1/on1';
 import { Feedback } from '../pages/feedback/feedback';
 import { NotificationPage } from '../pages/notification/notification';
 import { Storage } from '@ionic/storage';
-import { Push, PushObject, PushOptions } from '@ionic-native/push';
 import { PeopleService } from '../providers/people-service'
 import { ContactsPage } from '../pages';
 import { CallService, LoginService,AudioService } from '../services';
@@ -20,7 +19,7 @@ import * as moment from 'moment';
 import { LocalNotifications } from '@ionic-native/local-notifications';
 import { BackgroundMode } from '@ionic-native/background-mode';
 import { NativeAudio } from '@ionic-native/native-audio';
-
+import { FCM } from '@ionic-native/fcm';
 
 declare var cordova:any;
 
@@ -40,7 +39,7 @@ export class MyApp {
   unreadNotification : boolean;
   hamburgerNotification : boolean;
   otherPage : boolean;
-  constructor(public audioService:AudioService,public nativeAudio:NativeAudio,private backgroundMode: BackgroundMode,public localNotifications:LocalNotifications,callService: CallService, private loginService: LoginService, public events: Events, callModal: CallModalTrigger,public people: PeopleService,public platform: Platform, public push: Push, public statusBar: StatusBar, public splashScreen: SplashScreen, private toastCtrl: ToastController, public storage:Storage) {
+  constructor(public audioService:AudioService,public nativeAudio:NativeAudio,private backgroundMode: BackgroundMode,public localNotifications:LocalNotifications,callService: CallService, private loginService: LoginService, public events: Events, callModal: CallModalTrigger,public people: PeopleService,public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, private toastCtrl: ToastController, public storage:Storage,private fcm: FCM) {
     moment.locale('en', {
       relativeTime: {
         future: 'now',
@@ -58,6 +57,31 @@ export class MyApp {
         yy: '%d y'
       }
     });
+
+
+    fcm.getToken().then(token => {
+      alert("Token : "+ token);
+    })
+
+    fcm.onNotification().subscribe(data => {
+      if (data.wasTapped) {
+        //alert('received in background')
+        
+        let pageNumber= data.page;
+        switch(pageNumber){
+        case '1': alert("1"); break;
+        case '2': alert("2");break;
+        case '3': alert("3"); break;
+        case '4': alert("4"); break;
+        }
+      } else {
+        alert(JSON.stringify(data));
+      };
+    })
+
+    fcm.onTokenRefresh().subscribe(token => {
+      alert("token Refresh : "+token);
+    })
     
     
     this.audioService.stopAudioCalling()
@@ -74,7 +98,7 @@ export class MyApp {
           {
           this.rootPage = DiscoverPage
           this.user = JSON.parse(data)
-          this.pushsetup();
+          //this.pushsetup();
           this.loginService.login({"username":this.user.uid,"password":"apptoken"}).then(() => {
             this.loginService.complete.then(user => {})
           }, data => {
@@ -126,7 +150,7 @@ export class MyApp {
           if(data!=null)
           {   this.user = data.userData
               this.rootPage = DiscoverPage
-              this.pushsetup();
+              //this.pushsetup();
               this.loginService.login({"username":this.user.uid,"password":"apptoken"}).then(() => {
                 this.loginService.complete.then(user => {})
                 }, data => {
@@ -188,21 +212,15 @@ export class MyApp {
       
     });
   }
+  /*
   pushsetup() {
-    const options: PushOptions = {
-     android: {
-         senderID: '1056346035559'
-     },
-     ios: {
+
+  const options: PushOptions = {  android: {senderID: '1056346035559'
+     },     ios: {
          alert: 'true',
          badge: true,
-         sound: 'true'
-     },
-     windows: {}
-  };
- 
+         sound: 'true'},     windows: {}};
   const pushObject: PushObject = this.push.init(options);
- 
   pushObject.on('notification').subscribe((notification: any) => {
     this.nav.push(NotificationPage)
     if (notification.additionalData.foreground) {
@@ -212,9 +230,6 @@ export class MyApp {
               duration: 3000,
               position: 'top'
             });
-
-
-        
         if(notification.message.indexOf("message")>-1)
         {
           let name = notification.message.split("has")[0].trim()
@@ -265,13 +280,17 @@ export class MyApp {
   });
  
   pushObject.on('error').subscribe(error => alert('Error with Push plugin' + error));
+
   }
+
+
   pushCall(key){
     this.people.updatePushRegistration(key,(response)=>{
        if(response.status===-1)
          this.pushCall(key);
      })
   }
+  */
   openPage(page) {
     if(page.title==='Connections')
       {

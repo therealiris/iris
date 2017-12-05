@@ -1,32 +1,5 @@
 # Change Log
 
-## [v1.10.4](https://github.com/phonegap/phonegap-plugin-push/tree/v1.10.4) (2017-05-17)
-[Full Changelog](https://github.com/phonegap/phonegap-plugin-push/compare/v1.10.3...v1.10.4)
-
-- 1.10.4 [view commit](http://github.com/phonegap/phonegap-plugin-push/commit/ec7c3ea1fafbf3fafe502d278af218715aebb909)
-- :bookmark: Bumping plugin version to 1.10.4 [view commit](http://github.com/phonegap/phonegap-plugin-push/commit/b1efe1fa069c034aaf465e040300fd2884d46075)
-- :penguin::bug: Issue #1710: Notification message key overwritten [view commit](http://github.com/phonegap/phonegap-plugin-push/commit/911a1d4fe5d3a05e0012ee8121464cfb8974ce23)
-- :penguin::bug: Issue #1710: Notification message key overwritten [view commit](http://github.com/phonegap/phonegap-plugin-push/commit/4eadccd93d6daa81a05396a93fdc2033a4c90b12)
-- :penguin: Fix issue #1663 by allowing message as the data payload key (#1666) [view commit](http://github.com/phonegap/phonegap-plugin-push/commit/f8ac07399905fb9c6b0ab48139fa76066c5e190f)
-- [typo] Small fix to payload doc [view commit](http://github.com/phonegap/phonegap-plugin-push/commit/5a4a04b1be5a7dd30a9c577441b241767ec20500)
-- :memo: update readme [view commit](http://github.com/phonegap/phonegap-plugin-push/commit/0cbb7a92946ac9febb5ac5960291928d539c0fe6)
-- :memo: Fix PAYLOAD.md regarding "drawable" directory name (#1711) [view commit](http://github.com/phonegap/phonegap-plugin-push/commit/a27a62d6e346b1e61ffe2ffaae482461cf970c03)
-- Updating CHANGELOG [view commit](http://github.com/phonegap/phonegap-plugin-push/commit/cfad83fa420df5ba4ac12f2f3f7fa68fdb22cc03)
-
-## [v1.10.3](https://github.com/phonegap/phonegap-plugin-push/tree/v1.10.3) (2017-20-04)
-[Full Changelog](https://github.com/phonegap/phonegap-plugin-push/compare/v1.10.2...v1.10.3)
-
-- 1.10.3 [view commit](http://github.com/phonegap/phonegap-plugin-push/commit/1e072b351056d453fd1c1d40d5fcac310f3e107c)
-- :bookmark: Bumping plugin version to 1.10.3 [view commit](http://github.com/phonegap/phonegap-plugin-push/commit/29df66eae54e773925e25bd92299957e4d654723)
-- :bug: Handle null in getCircleBitmap (#1705) [view commit](http://github.com/phonegap/phonegap-plugin-push/commit/3acdfa338d7a8b56ec4dc73c50aa9917ecb3be7c)
-- :shirt: Issue #1702: The logging tag can be at most 23 characters, was 40 (PushPlugin_BackgroundActionButtonHandler) [view commit](http://github.com/phonegap/phonegap-plugin-push/commit/2045873acda2e81d54b2da87cd2d10f056bd90f9)
-- Shortened log tag PushPlugin_BackgroundActionButtonHandler to bring u… (#1703) [view commit](http://github.com/phonegap/phonegap-plugin-push/commit/dd707122b7aa78649fa6f5f73ba9b05436799926)
-- :memo: Docs for interoperability with Firebase (#1693) [view commit](http://github.com/phonegap/phonegap-plugin-push/commit/cebb6403143047192462f30c22b9510a8c6dbe21)
-- fix headline (#1685) [view commit](http://github.com/phonegap/phonegap-plugin-push/commit/e2e7993544eed544eb7286868b60e2e3efb6275d)
-- Fix changelog date [view commit](http://github.com/phonegap/phonegap-plugin-push/commit/3140b2b00388785f8056632376b50a1d1ef67b96)
-- :arrow_up: update pluginpub to 0.0.8 [view commit](http://github.com/phonegap/phonegap-plugin-push/commit/cfab7d91556a38ee81550fe47e13f2662ae810db)
-- Updating CHANGELOG [view commit](http://github.com/phonegap/phonegap-plugin-push/commit/027ea2c17e4b96b848ab29046efea243e6e2da27)
-
 ## [v1.10.2](https://github.com/phonegap/phonegap-plugin-push/tree/v1.10.2) (2017-04-12)
 [Full Changelog](https://github.com/phonegap/phonegap-plugin-push/compare/v1.10.1...v1.10.2)
 

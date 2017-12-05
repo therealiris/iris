@@ -35,7 +35,6 @@ import { Transfer } from '@ionic-native/transfer';
 import { FilePath } from '@ionic-native/file-path';
 import { Camera } from '@ionic-native/camera';
 import { LocalNotifications } from '@ionic-native/local-notifications';
-import { Push } from '@ionic-native/push';
 import { Ionic2RatingModule } from 'ionic2-rating';
 import { ChatsPage, ChatPage, AccountPage, ContactsPage } from '../pages';
 import { PeopleService } from '../providers/people-service';
@@ -136,7 +135,6 @@ const cloudSettings: CloudSettings = {
     AttachmentService, CallModalTrigger, LoginService, AudioService, SocketService, CallService, ContactService, VideoService, ChatService,
     StatusBar,
     SplashScreen,
-    Push,
     File,
     Transfer,
     Camera,

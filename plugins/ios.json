@@ -28,9 +28,6 @@
     "cordova-plugin-console": {
       "PACKAGE_NAME": "com.ionicframework.iris604867"
     },
-    "cordova-plugin-crosswalk-webview": {
-      "PACKAGE_NAME": "com.ionicframework.iris604867"
-    },
     "cordova-plugin-device": {
       "PACKAGE_NAME": "com.ionicframework.iris604867"
     },
@@ -85,6 +82,9 @@
       "PACKAGE_NAME": "com.ionicframework.iris604867"
     },
     "ionic-plugin-keyboard": {
+      "PACKAGE_NAME": "com.ionicframework.iris604867"
+    },
+    "cordova-plugin-fcm": {
       "PACKAGE_NAME": "com.ionicframework.iris604867"
     }
   },

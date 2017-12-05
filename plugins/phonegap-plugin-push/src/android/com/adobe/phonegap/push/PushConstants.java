@@ -78,5 +78,4 @@ public interface PushConstants {
     public static final String IMAGE_TYPE = "image-type";
     public static final String IMAGE_TYPE_SQUARE = "square";
     public static final String IMAGE_TYPE_CIRCLE = "circle";
-    public static final String SUBJECT = "subject";
 }
