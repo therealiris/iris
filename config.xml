@@ -66,8 +66,7 @@
         <hook src="hooks/iosrtc-swift-support.js" type="after_platform_add" />
     </platform>
     <icon src="resources/android/icon/drawable-xhdpi-icon.png" />
-    <engine name="ios" spec="^4.4.0" />
-    <engine name="android" spec="~6.4.0" />
+    <engine name="android" spec="~6.2.3" />
     <plugin name="cordova-plugin-console" spec="1.0.5" />
     <plugin name="cordova-plugin-device" spec="1.1.4" />
     <plugin name="cordova-plugin-inappbrowser" spec="~1.7.1" />
@@ -83,7 +82,7 @@
         <variable name="XWALK_MODE" value="embedded" />
         <variable name="XWALK_MULTIPLEAPK" value="true" />
     </plugin>
-    <plugin name="cordova-plugin-iosrtc" spec="^3.2.2" />
+    <plugin name="cordova-plugin-iosrtc" spec="4.0.2" />
     <plugin name="cordova-plugin-nativestorage" spec="^2.2.2" />
     <plugin name="cordova-sqlite-storage" spec="^2.0.4" />
     <plugin name="cordova-plugin-geolocation" spec="^2.4.3">
@@ -99,7 +98,7 @@
     <plugin name="cordova-plugin-file" spec="^4.3.3" />
     <plugin name="cordova-plugin-filepath" spec="^1.0.2" />
     <plugin name="cordova-plugin-file-transfer" spec="^1.6.3" />
-    <plugin name="phonegap-plugin-push" spec="^1.10.3">
+    <plugin name="phonegap-plugin-push" spec="1.10.3">
         <variable name="SENDER_ID" value="1056346035559" />
     </plugin>
     <plugin name="cordova-plugin-android-permissions" spec="^1.0.0" />
