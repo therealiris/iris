@@ -45,6 +45,7 @@ import { AndroidPermissions } from '@ionic-native/android-permissions';
 import { BackgroundMode } from '@ionic-native/background-mode';
 import { NativeAudio } from '@ionic-native/native-audio';
 import { Calendar } from '@ionic-native/calendar';
+import { FCM } from '@ionic-native/fcm';
 
 const cloudSettings: CloudSettings = {
   'core': {
@@ -140,7 +141,8 @@ const cloudSettings: CloudSettings = {
     Camera,
     FilePath,
     LocalNotifications,
-    AndroidPermissions,    
+    AndroidPermissions,   
+    FCM, 
     {provide: ErrorHandler, useClass: IonicErrorHandler}
     
   ]

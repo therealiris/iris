@@ -16,6 +16,7 @@ export class NotificationPage {
   icons: string[];
   items: Array<{title: string, note: string, icon: string}>;
   uid: string;
+  message:string;
   notifications: any;
   notificationType : any;
   requests : any;
@@ -26,8 +27,8 @@ export class NotificationPage {
     // let generalNotifications = this.storage.get("generalNotifications")
     // this.general = generalNotifications
     // console.log( generalNotifications)
-    this.notificationType = "connections"
-   	this.uid = this.navParams.data.uid
+    this.notificationType = this.navParams.data.message
+    
      if(this.navParams.data.segmentType)
        this.notificationType = this.navParams.data.segmentType
      this.requests = new Array();
@@ -44,10 +45,10 @@ export class NotificationPage {
         if(notification.type === 0)
           this.general.push(notification)
       })
-      if(this.requests.length<this.meetings.length)
-        this.notificationType = "meetings"
-      if(this.meetings.length<this.general.length)
-        this.notificationType = "general"
+      // if(this.requests.length<this.meetings.length)
+      //   this.notificationType = "meetings"
+      // if(this.meetings.length<this.general.length)
+      //   this.notificationType = "general"
       console.log(this.notifications)
     })
 

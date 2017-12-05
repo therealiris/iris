@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { Nav, Platform, ToastController, Events } from 'ionic-angular';
+import { Nav, NavParams, Platform, ToastController, Events } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { HomePage } from '../pages/home/home';
@@ -61,18 +61,18 @@ export class MyApp {
 
     fcm.getToken().then(token => {
       alert("Token : "+ token);
+      console.log(token);
     })
 
     fcm.onNotification().subscribe(data => {
       if (data.wasTapped) {
         //alert('received in background')
         
-        let pageNumber= data.page;
-        switch(pageNumber){
-        case '1': alert("1"); break;
-        case '2': alert("2");break;
-        case '3': alert("3"); break;
-        case '4': alert("4"); break;
+        let message= data.message;
+        switch(message){
+        case 'connections': alert("Connection");   this.nav.setRoot(NotificationPage,{"message":message}); break;
+        case 'meetings': alert("Meetings");   this.nav.setRoot(NotificationPage,{"message":message});break;
+        case 'general': alert("General");   this.nav.setRoot(NotificationPage,{"message":message}); break;
         }
       } else {
         alert(JSON.stringify(data));

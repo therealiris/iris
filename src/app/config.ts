@@ -8,8 +8,13 @@ export class Config {
 	// url of the chat server
 	// for local development it will be something like http://192.168.0.214:9000/
 	//public static server = 'https://ionic-video-chat-server.herokuapp.com/';
-	//public static server = 'ws://139.162.5.76:5000/';
-	public static server = 'ws://192.168.1.22:5000/';
+	public static server = 'ws://139.162.5.76:5000/';
+	
+	
+	//public static server = 'ws://192.168.0.24:5000/';
+	//	public static server = 'ws://192.168.1.22:5000/';
+	
+	
 	// enables or disables chat sounds. usefull for development
 	public static audio = true;
 
