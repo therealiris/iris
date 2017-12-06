@@ -1,40 +1,65 @@
 {
-  "name": "cordova-plugin-iosrtc",
-  "version": "3.2.2",
-  "description": "Cordova iOS plugin exposing the full WebRTC W3C JavaScript APIs",
-  "author": "Iñaki Baz Castillo at eFace2Face, inc. (https://eface2face.com)",
-  "license": "MIT",
-  "keywords": [
-    "ecosystem:cordova",
-    "webrtc",
-    "ios"
+  "_args": [
+    [
+      {
+        "raw": "https://github.com/saghul/cordova-plugin-iosrtc#next",
+        "scope": null,
+        "escapedName": null,
+        "name": null,
+        "rawSpec": "https://github.com/saghul/cordova-plugin-iosrtc#next",
+        "spec": "git+https://github.com/saghul/cordova-plugin-iosrtc.git#next",
+        "type": "hosted",
+        "hosted": {
+          "type": "github",
+          "ssh": "git@github.com:saghul/cordova-plugin-iosrtc.git#next",
+          "sshUrl": "git+ssh://git@github.com/saghul/cordova-plugin-iosrtc.git#next",
+          "httpsUrl": "git+https://github.com/saghul/cordova-plugin-iosrtc.git#next",
+          "gitUrl": "git://github.com/saghul/cordova-plugin-iosrtc.git#next",
+          "shortcut": "github:saghul/cordova-plugin-iosrtc#next",
+          "directUrl": "https://raw.githubusercontent.com/saghul/cordova-plugin-iosrtc/next/package.json"
+        }
+      },
+      "/Users/akashpaul/Documents/upwork/Arjun-iris/Archive"
+    ]
   ],
-  "main": "js/iosrtc.js",
-  "homepage": "https://github.com/eface2face/cordova-plugin-iosrtc",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/eface2face/cordova-plugin-iosrtc.git"
+  "_from": "git+https://github.com/saghul/cordova-plugin-iosrtc.git#next",
+  "_id": "cordova-plugin-iosrtc@4.0.0-pre",
+  "_inCache": true,
+  "_location": "/cordova-plugin-iosrtc",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "https://github.com/saghul/cordova-plugin-iosrtc#next",
+    "scope": null,
+    "escapedName": null,
+    "name": null,
+    "rawSpec": "https://github.com/saghul/cordova-plugin-iosrtc#next",
+    "spec": "git+https://github.com/saghul/cordova-plugin-iosrtc.git#next",
+    "type": "hosted",
+    "hosted": {
+      "type": "github",
+      "ssh": "git@github.com:saghul/cordova-plugin-iosrtc.git#next",
+      "sshUrl": "git+ssh://git@github.com/saghul/cordova-plugin-iosrtc.git#next",
+      "httpsUrl": "git+https://github.com/saghul/cordova-plugin-iosrtc.git#next",
+      "gitUrl": "git://github.com/saghul/cordova-plugin-iosrtc.git#next",
+      "shortcut": "github:saghul/cordova-plugin-iosrtc#next",
+      "directUrl": "https://raw.githubusercontent.com/saghul/cordova-plugin-iosrtc/next/package.json"
+    }
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "git+https://github.com/saghul/cordova-plugin-iosrtc.git#d38fe4dabb6d433b20ec6fe4efd65fa86aa710a4",
+  "_shasum": "ef90b7ac57f7dfe6446c68c8583fafbdda35dea4",
+  "_shrinkwrap": null,
+  "_spec": "https://github.com/saghul/cordova-plugin-iosrtc#next",
+  "_where": "/Users/akashpaul/Documents/upwork/Arjun-iris/Archive",
+  "author": {
+    "name": "Iñaki Baz Castillo at eFace2Face, inc.",
+    "url": "https://eface2face.com"
   },
   "bugs": {
     "url": "https://github.com/eface2face/cordova-plugin-iosrtc/issues"
-  },
-  "dependencies": {
-    "debug": "^2.2.0",
-    "domready": "^1.0.8",
-    "random-number": "^0.0.7",
-    "yaeti": "^0.0.6"
-  },
-  "devDependencies": {
-    "browserify": "^13.0.1",
-    "gulp": "git+https://github.com/gulpjs/gulp.git#4.0",
-    "gulp-header": "^1.8.7",
-    "gulp-jscs": "^4.0.0",
-    "gulp-jscs-stylish": "^1.4.0",
-    "gulp-jshint": "^2.0.1",
-    "jshint": "^2.9.2",
-    "jshint-stylish": "~2.2.0",
-    "vinyl-buffer": "^1.0.0",
-    "vinyl-source-stream": "^1.1.0"
   },
   "cordova": {
     "id": "cordova-plugin-iosrtc",
@@ -42,10 +67,48 @@
       "ios"
     ]
   },
+  "dependencies": {
+    "debug": "^2.6.3",
+    "domready": "^1.0.8",
+    "random-number": "^0.0.7",
+    "yaeti": "^0.0.6"
+  },
+  "description": "Cordova iOS plugin exposing the full WebRTC W3C JavaScript APIs",
+  "devDependencies": {
+    "browserify": "^14.1.0",
+    "gulp": "git+https://github.com/gulpjs/gulp.git#4.0",
+    "gulp-derequire": "^2.1.0",
+    "gulp-header": "^1.8.8",
+    "gulp-jscs": "^4.0.0",
+    "gulp-jscs-stylish": "^1.4.0",
+    "gulp-jshint": "^2.0.4",
+    "jshint": "^2.9.4",
+    "jshint-stylish": "~2.2.1",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0"
+  },
   "engines": [
     {
       "name": "cordova-ios",
       "version": ">=3.8.0"
     }
-  ]
+  ],
+  "gitHead": "d38fe4dabb6d433b20ec6fe4efd65fa86aa710a4",
+  "homepage": "https://github.com/eface2face/cordova-plugin-iosrtc",
+  "keywords": [
+    "ecosystem:cordova",
+    "webrtc",
+    "ios"
+  ],
+  "license": "MIT",
+  "main": "js/iosrtc.js",
+  "name": "cordova-plugin-iosrtc",
+  "optionalDependencies": {},
+  "readme": "# cordova-plugin-iosrtc\n\n[Cordova](http://cordova.apache.org/) iOS plugin exposing the full [WebRTC W3C JavaScript APIs](http://www.w3.org/TR/webrtc/).\n\n\n* [Public Google Group (mailing list)](https://groups.google.com/forum/#!forum/cordova-plugin-iosrtc) for questions and discussions about *cordova-plugin-iosrtc*.\n* [Bug Tracker](https://github.com/eface2face/cordova-plugin-iosrtc/issues) for reporting issues and requesting new features (**please** don't use the bug tracker for questions or problems, use the mailing list instead).\n* [NPM package](https://www.npmjs.com/package/cordova-plugin-iosrtc).\n\n\n**Yet another WebRTC SDK for iOS?**\n\nAbsolutely **not**. This plugin exposes the WebRTC W3C API for Cordova iOS apps (you know there is no WebRTC in iOS, right?), which means no need to learn \"yet another WebRTC API\" and no need to use a specific service/product/provider.\n\n**Why?**\n\nCheck the [release announcement](https://eface2face.com/blog/cordova-plugin-iosrtc.html) at the [eFace2Face](https://eface2face.com) site.\n\n\n## Requirements\n\nIn order to make this Cordova plugin run into a iOS application some requirements must be satisfied in both development computer and target devices:\n\n* Xcode >= 7.2.1\n* iOS >= 9 (run on lower versions at your own risk, but don't report issues)\n* `cordova-ios` 4.X\n\n\n## Installation\n\nWithin your Cordova project:\n\n```bash\n$ cordova plugin add cordova-plugin-iosrtc\n```\n\n(or add it into a `<plugin>` entry in the `config.xml` of your app).\n\n\n## Building\n\n* [Building](docs/Building.md): Guidelines for building a Cordova iOS application including the *cordova-plugin-iosrtc* plugin.\n* [Building `libwebrtc`](docs/BuildingLibWebRTC.md): Guidelines for building Google's *libwebrtc* with modifications needed by the *cordova-plugin-iosrtc* plugin (just in case you want to use a different version of *libwebrtc* or apply your own changes to it).\n\n\n## Usage\n\nThe plugin exposes the `cordova.plugins.iosrtc` JavaScript namespace which contains all the WebRTC classes and functions.\n\n```javascript\nvar pc = new cordova.plugins.iosrtc.RTCPeerConnection({\n  iceServers: []\n});\n\ncordova.plugins.iosrtc.getUserMedia(\n  // constraints\n  { audio: true, video: true },\n  // success callback\n  function (stream) {\n    console.log('got local MediaStream: ', stream);\n\n    pc.addStream(stream);\n  },\n  // failure callback\n  function (error) {\n    console.error('getUserMedia failed: ', error);\n  }\n);\n```\n\nIn case you'd like to expose the API in the global namespace like regular browsers you can do the following:\n\n```javascript\n// Just for Cordova apps.\ndocument.addEventListener('deviceready', function () {\n  // Just for iOS devices.\n  if (window.device.platform === 'iOS') {\n    cordova.plugins.iosrtc.registerGlobals();\n\n    // load adapter.js\n    var script = document.createElement(\"script\");\n    script.type = \"text/javascript\";\n    script.src = \"js/adapter-latest.js\";\n    script.async = false;\n    document.getElementsByTagName(\"head\")[0].appendChild(script);\n  }\n});\n```\n\nAnd that's all. Now you have `window.RTCPeerConnection`, `navigator.getUserMedia`, etc.\n\n\n## FAQ\n\nSee [the FAQ](FAQ.md).\n\n\n## Documentation\n\nRead the full [documentation](docs/index.md) in the *docs* folder.\n\n\n## Who Uses It\n\n[People and companies](WHO_USES_IT.md) using *cordova-plugin-iosrtc*.\n\nIf you are using the plugin we would love to [hear back from you](WHO_USES_IT.md)!\n\n\n## Known Issues\n\n\n#### iOS Safari and crash on WebSocket events\n\nDon't call plugin methods within WebSocket events (`onopen`, `onmessage`, etc). There is an issue in iOS Safari (see [issue #12](https://github.com/eface2face/cordova-plugin-iosrtc/issues/12)). Instead run a `setTimeout()` within the WebSocket event if you need to call plugin methods on it.\n\nOr better yet, include the provided [ios-websocket-hack.js](extra/ios-websocket-hack.js) in your app and load into your `index.html` as follows:\n\n```\n<script src=\"cordova.js\"></script>\n<script src=\"ios-websocket-hack.min.js\"></script>\n```\n\n#### HTML5 video API\n\nThere is no real media source attached to the `<video>` element so some [HTML5 video events](https://developer.mozilla.org/en-US/docs/Web/Guide/Events/Media_events) and properties are artificially emitted/set by the plugin on behalf of the video element.\n\nMethods such as `play()`, `pause()` are not implemented. In order to pause a video just set `enabled = false` on the associated `MediaStreamTrack`.\n\n\n## Changelog\n\nSee [CHANGELOG.md](./CHANGELOG.md).\n\n\n## Author\n\n[Iñaki Baz Castillo](https://inakibaz.me/)\n\n\n### Maintainers\n\n* [Iñaki Baz Castillo](https://inakibaz.me/)\n* [Saúl Ibarra Corretgé](http://bettercallsaghul.com)\n\n\n## License\n\n[MIT](./LICENSE) :)\n",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eface2face/cordova-plugin-iosrtc.git"
+  },
+  "version": "4.0.0-pre"
 }

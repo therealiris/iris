@@ -55,14 +55,6 @@
     "is_top_level": true,
     "variables": {}
   },
-  "cordova-plugin-iosrtc": {
-    "source": {
-      "type": "registry",
-      "id": "cordova-plugin-iosrtc@^3.2.2"
-    },
-    "is_top_level": true,
-    "variables": {}
-  },
   "cordova-plugin-nativestorage": {
     "source": {
       "type": "registry",
@@ -208,16 +200,6 @@
     "is_top_level": false,
     "variables": {}
   },
-  "phonegap-plugin-push": {
-    "source": {
-      "type": "registry",
-      "id": "phonegap-plugin-push@1.10.3"
-    },
-    "is_top_level": true,
-    "variables": {
-      "SENDER_ID": "1056346035559"
-    }
-  },
   "cordova-plugin-background-mode": {
     "source": {
       "type": "registry",
@@ -230,6 +212,14 @@
     "source": {
       "type": "registry",
       "id": "cordova-plugin-fcm@^2.1.2"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-iosrtc": {
+    "source": {
+      "type": "registry",
+      "id": "https://github.com/saghul/cordova-plugin-iosrtc#next"
     },
     "is_top_level": true,
     "variables": {}

@@ -46,6 +46,7 @@
     "angular2-moment": "^1.1.0",
     "axios": "^0.16.2",
     "cordova-android": "^6.4.0",
+    "cordova-ios": "^4.5.4",
     "cordova-plugin-android-permissions": "^1.0.0",
     "cordova-plugin-audiotoggle": "^1.0.3",
     "cordova-plugin-background-mode": "^0.7.2",
@@ -60,7 +61,7 @@
     "cordova-plugin-filepath": "^1.0.2",
     "cordova-plugin-geolocation": "^2.4.3",
     "cordova-plugin-inappbrowser": "~1.7.1",
-    "cordova-plugin-iosrtc": "4.0.2",
+    "cordova-plugin-iosrtc": "git+https://github.com/saghul/cordova-plugin-iosrtc.git#next",
     "cordova-plugin-media": "^3.0.1",
     "cordova-plugin-nativeaudio": "^3.0.9",
     "cordova-plugin-nativestorage": "^2.2.2",
@@ -83,7 +84,6 @@
     "md5": "^2.2.1",
     "moment": "^2.18.1",
     "peerjs": "^0.3.14",
-    "phonegap-plugin-push": "1.10.3",
     "rxjs": "^5.1.0",
     "socket.io-client": "^1.7.2",
     "sw-toolbox": "3.4.0",
@@ -127,7 +127,6 @@
       "cordova-plugin-whitelist": {},
       "ionic-plugin-keyboard": {},
       "cordova-plugin-nativeaudio": {},
-      "cordova-plugin-iosrtc": {},
       "cordova-plugin-nativestorage": {},
       "cordova-sqlite-storage": {},
       "cordova-plugin-geolocation": {
@@ -151,9 +150,7 @@
       "cordova-plugin-calendar": {},
       "cordova-plugin-audiotoggle": {},
       "cordova-plugin-fcm": {},
-      "phonegap-plugin-push": {
-        "SENDER_ID": "1056346035559"
-      }
+      "cordova-plugin-iosrtc": {}
     },
     "platforms": [
       "android"

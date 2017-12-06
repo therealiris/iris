@@ -12,7 +12,7 @@ var
 
 	BUILD_VERSION = '9.0',
 	BUILD_VERSION_XCODE = '"' + BUILD_VERSION + '"',
-	SWIFT_VERSION = '2.3',
+	SWIFT_VERSION = '3.0',
 	SWIFT_VERSION_XCODE = '"' + SWIFT_VERSION + '"',
 	RUNPATH_SEARCH_PATHS = '@executable_path/Frameworks',
 	RUNPATH_SEARCH_PATHS_XCODE = '"' + RUNPATH_SEARCH_PATHS + '"',
@@ -97,6 +97,7 @@ module.exports = function (context) {
 	swiftOptions.push('SWIFT_OBJC_BRIDGING_HEADER = ' + swiftBridgingHead);
 	swiftOptions.push('IPHONEOS_DEPLOYMENT_TARGET = ' + BUILD_VERSION);
 	swiftOptions.push('ENABLE_BITCODE = ' + ENABLE_BITCODE);
+	swiftOptions.push('SWIFT_VERSION = ' + SWIFT_VERSION);
 	// NOTE: Not needed
 	// swiftOptions.push('EMBEDDED_CONTENT_CONTAINS_SWIFT = YES');
 	fs.appendFileSync(xcconfigPath, swiftOptions.join('\n'));

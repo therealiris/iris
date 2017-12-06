@@ -9,6 +9,9 @@
   "installed_plugins": {
     "cordova-plugin-fcm": {
       "PACKAGE_NAME": "com.ionicframework.iris604867"
+    },
+    "cordova-plugin-iosrtc": {
+      "PACKAGE_NAME": "com.ionicframework.iris604867"
     }
   },
   "dependent_plugins": {}
